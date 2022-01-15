@@ -11,7 +11,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "mfe1",
-    publicPath: "auto"
+    publicPath: "auto",
   },
   optimization: {
     runtimeChunk: false
@@ -46,6 +46,8 @@ module.exports = {
           "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          "@ngx-translate/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          "@ngx-translate/http-loader": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
 
           ...sharedMappings.getDescriptors()
         })
@@ -53,4 +55,12 @@ module.exports = {
     }),
     sharedMappings.getPlugin()
   ],
+  module: {
+    rules: [
+      {
+        test: /\.json/,
+        type: 'asset/resource'
+      }
+    ]
+  },
 };
