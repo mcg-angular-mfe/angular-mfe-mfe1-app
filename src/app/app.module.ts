@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 import { CustomTranslateLoader } from './loader/custom-translate.loader';
 import { Mfe1Module } from './mfe1/mfe1.module';
 
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, '/assets/i18n/mfe1/');
-}
+// // AoT requires an exported function for factories
+// export function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, '/assets/i18n/mfe1/');
+// }
 
 @NgModule({
   declarations: [
